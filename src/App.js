@@ -24,7 +24,7 @@ const App = () => {
 
     return (
         <div className='app'>
-            <h1>React Rell Hub</h1>
+            <h1>React Reel Hub</h1>
 
             <div className="search">
                 <input
