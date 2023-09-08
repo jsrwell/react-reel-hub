@@ -8,18 +8,71 @@
 }
 
 :root {
-  --font-roboto: "Roboto Slab", serif;
+  --color-primary: #269fe6;
+  --color-primary-hover: #2086c2;
+  --color-primary-dark: #13141f;
+  --color-primary-dark-hover: #212336;
+  --color-primary-light: #d4ecfa;
+  --color-primary-light-hover: #bdd8e7;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-dark-text: #444;
+  --color-info-light: #cce5ff;
+  --color-debug-light: #cce5ff;
+  --color-success-light: #d4edda;
+  --color-alert-light: #fff3cd;
+  --color-warning-light: #fff3cd;
+  --color-error-light: #f8d7da;
+
+  --color-info-dark: #4d86c4;
+  --color-debug-dark: #4d86c4;
+  --color-success-dark: #4a9c5d;
+  --color-alert-dark: #927f40;
+  --color-warning-dark: #927f40;
+  --color-error-dark: #da525d;
+
+  --color-gray-0: #f9f9f9;
+  --color-gray-1: #e0e0e0;
+  --color-gray-2: #c7c7c7;
+  --color-gray-3: #aeaeae;
+  --color-gray-4: #959595;
+  --color-gray-5: #7d7d7d;
+  --color-gray-6: #646464;
+  --color-gray-7: #4b4b4b;
+  --color-gray-8: #323232;
+  --color-gray-9: #191919;
+
+  --font-primary: sans-serif;
+  --font-headings: 'Roboto Slab', serif;
   --font-raleway: "Raleway", sans-serif;
 }
 
 body {
-  font-family: var(--font-roboto);
+  font-family: var(--font-headings);
   background-color: #212426;
+  background-image: url('wallpaper.jpg');
+  background-repeat: repeat-x repeat-y;
+  background-size: auto;
+  background-position: center center;
+  position: relative;
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+  z-index: -1;
+}
+
 
 .app {
   padding: 4rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,40 +85,43 @@ h1 {
   background: linear-gradient(
     90deg,
     rgba(249, 211, 180, 1) 0%,
-    rgba(249, 211, 180, 0) 100%
+    rgba(249, 211, 180, 0.3) 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
+  border: 1px solid rgba(249, 211, 180, 1);
+  padding: 5px 100%;
 }
 
 .search {
-  width: 71%;
+  width: 80%;
   margin: 4rem 0 2rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 1.5rem 1.75rem;
-  border-radius: 3rem;
+  border: 1px solid rgba(249, 211, 180, 0.5);
+  border-radius: 1rem;
   background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  transition: 300ms ease-in-out all;
 }
 
 .search input {
   flex: 1;
   border: none;
   font-size: 1.5rem;
-  font-family: var(--font-raleway);
+  font-family: var(--font-primary);
   font-weight: 500;
   padding-right: 1rem;
-
   outline: none;
-  color: #a1a1a1;
+  color: rgba(249, 211, 180, 1);
   background: #1f2123;
+}
+
+.search:focus-within {
+  border-width: 3px;
 }
 
 .search img {
@@ -74,40 +130,23 @@ h1 {
   cursor: pointer;
 }
 
-/* .search button {
-  padding: 20px 40px;
-  border-radius: 0.5rem;
-  margin-left: 15px;
-  color: #a1a1a1;
-  font-family: var(--font-raleway);
-  font-weight: 900;
-  letter-spacing: 0.75px;
-  font-size: 1.25rem;
-  cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} */
-
 .empty {
   width: 100%;
   margin-top: 3rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .empty h2 {
-  font-size: 1.25rem;
+  font-size: 3rem;
   color: #f9d3b4;
-  font-family: var(--font-raleway);
+  font-family: var(--font-primary);
 }
 
 .container {
   width: 100%;
   margin-top: 3rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,12 +157,10 @@ h1 {
   width: 310px;
   height: 460px;
   margin: 1.5rem;
-
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  border: none;
-
+  border: 1px solid rgba(249, 211, 180, 1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
@@ -140,6 +177,7 @@ h1 {
 .movie:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.05, 1.05);
+  border-width: 3px;
 }
 
 .movie div:nth-of-type(2) {
@@ -156,7 +194,6 @@ h1 {
   z-index: 2;
   background-color: #343739;
   padding: 16px 24px 24px 24px;
-
   position: absolute;
   bottom: 0;
   right: 0;
@@ -164,7 +201,7 @@ h1 {
 }
 
 .movie div:nth-of-type(3) span {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-primary);
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 2px;
@@ -174,13 +211,13 @@ h1 {
 
 .movie div:nth-of-type(3) h3 {
   margin-top: 5px;
-  font-family: "Roboto Slab", serif;
+  font-family: var(--font-primary);
   color: #f9d3b4;
 }
 
 .movie:hover div:nth-of-type(2) {
   height: 100%;
-  opacity: 0.3;
+  opacity: 1;
 }
 
 .movie:hover div:nth-of-type(3) {
