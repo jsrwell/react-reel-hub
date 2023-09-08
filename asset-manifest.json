@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-reel-hub/static/css/main.8e74c91c.css",
-    "main.js": "/react-reel-hub/static/js/main.0cf8a776.js",
+    "main.js": "/react-reel-hub/static/js/main.8bebb3a6.js",
     "static/media/wallpaper.jpg": "/react-reel-hub/static/media/wallpaper.1465c20ef14d3bff5970.jpg",
     "index.html": "/react-reel-hub/index.html",
     "static/media/search.svg": "/react-reel-hub/static/media/search.1d251d5b6b0380407ddea26c5ddf7e94.svg",
     "main.8e74c91c.css.map": "/react-reel-hub/static/css/main.8e74c91c.css.map",
-    "main.0cf8a776.js.map": "/react-reel-hub/static/js/main.0cf8a776.js.map"
+    "main.8bebb3a6.js.map": "/react-reel-hub/static/js/main.8bebb3a6.js.map"
   },
   "entrypoints": [
     "static/css/main.8e74c91c.css",
-    "static/js/main.0cf8a776.js"
+    "static/js/main.8bebb3a6.js"
   ]
 }
